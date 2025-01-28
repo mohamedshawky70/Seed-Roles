@@ -15,7 +15,7 @@ namespace BookHaven.Web.Seeds
 				EmailConfirmed = true     //To don't ask to confirme
 			};
 			var user = await userManager.FindByEmailAsync(Admin.Email);
-			if (user is null)
+			if (user is null)//The first run only
 			{
 				var result = await userManager.CreateAsync(Admin, "P@$$0Rd123");//must strong passowrd
 			    await userManager.AddToRoleAsync(Admin, AppRoles.Admin);
