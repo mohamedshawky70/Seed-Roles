@@ -7,7 +7,7 @@ namespace BookHaven.Web.Seeds
 	{
 		public static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
 		{
-			if (!roleManager.Roles.Any())
+			if (!roleManager.Roles.Any())//The first run only
 			{
 				await roleManager.CreateAsync(new IdentityRole(AppRoles.Admin));
 				await roleManager.CreateAsync(new IdentityRole(AppRoles.Achieve));
